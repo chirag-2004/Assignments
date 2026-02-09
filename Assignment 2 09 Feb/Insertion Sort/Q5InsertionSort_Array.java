@@ -1,6 +1,6 @@
 // package newTrainer2;
 
-public class Q5Sort_Array{
+public class Q5InsertionSort_Array{
 
     public static void insertionSort(int[] arr) {
         int n = arr.length;

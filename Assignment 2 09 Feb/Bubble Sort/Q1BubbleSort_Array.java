@@ -1,6 +1,6 @@
 // package newTrainer2;
 
-public class Q1Sort_Array{
+public class Q1BubbleSort_Array{
 
     public static void bubbleSort(int[] arr) {
         int n = arr.length;

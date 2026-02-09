@@ -1,6 +1,6 @@
 // package newTrainer2;
 
-public class Q9Sort_Array{
+public class Q9SelectionSort_Array{
 
     public static void selectionSort(int[] arr) {
         int n = arr.length;

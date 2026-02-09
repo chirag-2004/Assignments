@@ -2,27 +2,27 @@
 
 import java.util.Arrays;
 
-class Student123 {
+class Stu {
     String name;
     int[] marks;
 
-    Student123(String name, int[] marks) {
+    Stu(String name, int[] marks) {
         this.name = name;
         this.marks = marks;
     }
 }
 
-public class Q7Sorting {
+public class Q7InsertionSorting {
 
     public static void main(String[] args) {
 
-        Student123[] students = {
-            new Student123("Rahul",  new int[]{85, 78, 90}),
-            new Student123("Sneha",  new int[]{85, 78, 88}),
-            new Student123("Vikas",  new int[]{85, 65, 92}),
-            new Student123("Pooja",  new int[]{90, 70, 85}),
-            new Student123("Arjun",  new int[]{85, 78, 95}),
-            new Student123("Meera",  new int[]{80, 72, 89})
+        Studet123[] students = {
+            new Studet123("Rahul",  new int[]{85, 78, 90}),
+            new Studet123("Sneha",  new int[]{85, 78, 88}),
+            new Studet123("Vikas",  new int[]{85, 65, 92}),
+            new Studet123("Pooja",  new int[]{90, 70, 85}),
+            new Studet123("Arjun",  new int[]{85, 78, 95}),
+            new Studet123("Meera",  new int[]{80, 72, 89})
         };
 
         System.out.println("Before sorting:");
@@ -34,11 +34,11 @@ public class Q7Sorting {
         print(students);
     }
 
-    static void insertionSort(Student123[] arr) {
+    static void insertionSort(Studet123[] arr) {
         int n = arr.length;
 
         for (int i = 1; i < n; i++) {
-            Student123 key = arr[i];
+            Studet123 key = arr[i];
             int j = i - 1;
 
             while (j >= 0 && compareMarks(arr[j].marks, key.marks) > 0) {
@@ -61,8 +61,8 @@ public class Q7Sorting {
         return a.length - b.length;
     }
 
-    static void print(Student123[] students) {
-        for (Student123 s : students) {
+    static void print(Studet123[] students) {
+        for (Studet123 s : students) {
             System.out.println(s.name + " " + Arrays.toString(s.marks));
         }
     }

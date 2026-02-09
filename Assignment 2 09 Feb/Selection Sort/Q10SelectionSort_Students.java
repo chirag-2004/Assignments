@@ -14,9 +14,9 @@ class Student12 {
     }
 }
 
-public class Q10Sort_Students {
+public class Q10SelectionSort_Students {
 
-    public static void selectionSort(Student12[] students) {
+    public static void selectionSort(Stud[] students) {
         int n = students.length;
 
         for (int i = 0; i < n - 1; i++) {
@@ -28,7 +28,7 @@ public class Q10Sort_Students {
                 }
             }
 
-            Student12 temp = students[i];
+            Stud temp = students[i];
             students[i] = students[minIndex];
             students[minIndex] = temp;
         }
@@ -36,17 +36,17 @@ public class Q10Sort_Students {
 
     public static void main(String[] args) {
 
-        Student12[] students = {
-            new Student12(103, "Aman"),
-            new Student12(101, "Riya"),
-            new Student12(105, "Karan"),
-            new Student12(102, "Neha")
+        Stud[] students = {
+            new Stud(103, "Aman"),
+            new Stud(101, "Riya"),
+            new Stud(105, "Karan"),
+            new Stud(102, "Neha")
         };
 
         selectionSort(students);
 
         System.out.println("Students sorted by Roll Number:");
-        for (Student12 s : students) {
+        for (Stud s : students) {
             s.display();
         }
     }

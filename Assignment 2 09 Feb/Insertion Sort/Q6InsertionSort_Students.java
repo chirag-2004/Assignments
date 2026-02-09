@@ -1,10 +1,10 @@
 // package newTrainer2;
 
-class Student12 {
+class St {
     int rollNo;
     String name;
 
-    Student12(int rollNo, String name) {
+    St(int rollNo, String name) {
         this.rollNo = rollNo;
         this.name = name;
     }
@@ -14,13 +14,13 @@ class Student12 {
     }
 }
 
-public class Q6Sort_Students {
+public class Q6InsertionSort_Students {
 
-    public static void insertionSort(Student12[] students) {
+    public static void insertionSort(Stud[] students) {
         int n = students.length;
 
         for (int i = 1; i < n; i++) {
-            Student12 key = students[i];
+            Stud key = students[i];
             int j = i - 1;
 
             while (j >= 0 && students[j].rollNo > key.rollNo) {
@@ -34,17 +34,17 @@ public class Q6Sort_Students {
 
     public static void main(String[] args) {
 
-        Student12[] students = {
-            new Student12(103, "Aman"),
-            new Student12(101, "Riya"),
-            new Student12(105, "Karan"),
-            new Student12(102, "Neha")
+        Stud[] students = {
+            new Stud(103, "Aman"),
+            new Stud(101, "Riya"),
+            new Stud(105, "Karan"),
+            new Stud(102, "Neha")
         };
 
         insertionSort(students);
 
         System.out.println("Students sorted by Roll Number:");
-        for (Student12 s : students) {
+        for (Stud s : students) {
             s.display();
         }
     }
