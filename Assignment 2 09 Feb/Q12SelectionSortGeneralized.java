@@ -1,4 +1,4 @@
-package newTrainer2;
+// package newTrainer2;
 
 class Student8 {
     String name;
@@ -10,7 +10,7 @@ class Student8 {
     }
 }
 
-public class BubbleSortGeneralized {
+public class Q12SelectionSortGeneralized {
 
     public static void main(String[] args) {
 
@@ -29,7 +29,7 @@ public class BubbleSortGeneralized {
             new Student8("Tanya", 94, 83, 88, 90)
         };
 
-        bubbleSort(students);
+        selectionSort(students);
 
         System.out.println("Students sorted by marks:");
         for (Student8 s : students) {
@@ -41,23 +41,21 @@ public class BubbleSortGeneralized {
         }
     }
 
-    static void bubbleSort(Student8[] students) {
+    static void selectionSort(Student8[] students) {
         int n = students.length;
 
         for (int i = 0; i < n - 1; i++) {
-            boolean swapped = false;
+            int minIndex = i;
 
-            for (int j = 0; j < n - 1 - i; j++) {
-                if (shouldSwap(students[j], students[j + 1])) {
-                    Student8 temp = students[j];
-                    students[j] = students[j + 1];
-                    students[j + 1] = temp;
-                    swapped = true;
+            for (int j = i + 1; j < n; j++) {
+                if (shouldSwap(students[j], students[minIndex])) {
+                    minIndex = j;
                 }
             }
 
-            if (!swapped)
-                break;
+            Student8 temp = students[i];
+            students[i] = students[minIndex];
+            students[minIndex] = temp;
         }
     }
 
@@ -72,4 +70,3 @@ public class BubbleSortGeneralized {
         return s1.marks.length < s2.marks.length;
     }
 }
-
