@@ -1,10 +1,12 @@
+// package newTrainer2;
+
 import java.util.Arrays;
 
-class Student {
+class Student123 {
     String name;
     int[] marks;
 
-    Student(String name, int[] marks) {
+    Student123(String name, int[] marks) {
         this.name = name;
         this.marks = marks;
     }
@@ -14,10 +16,13 @@ public class Q3Sorting {
 
     public static void main(String[] args) {
 
-        Student[] students = {
-            new Student("Aman",   new int[]{80, 75, 68}),
-            new Student("Kartik", new int[]{80, 75, 90}),
-            new Student("Neha",   new int[]{80, 60, 88})
+        Student123[] students = {
+            new Student123("Rahul",  new int[]{85, 78, 90}),
+            new Student123("Sneha",  new int[]{85, 78, 88}),
+            new Student123("Vikas",  new int[]{85, 65, 92}),
+            new Student123("Pooja",  new int[]{90, 70, 85}),
+            new Student123("Arjun",  new int[]{85, 78, 95}),
+            new Student123("Meera",  new int[]{80, 72, 89})
         };
 
         System.out.println("Before sorting:");
@@ -29,14 +34,14 @@ public class Q3Sorting {
         print(students);
     }
 
-    static void bubbleSort(Student[] arr) {
+    static void bubbleSort(Student123[] arr) {
         int n = arr.length;
 
         for (int i = 0; i < n - 1; i++) {
             for (int j = 0; j < n - i - 1; j++) {
 
                 if (compareMarks(arr[j].marks, arr[j + 1].marks) > 0) {
-                    Student temp = arr[j];
+                    Student123 temp = arr[j];
                     arr[j] = arr[j + 1];
                     arr[j + 1] = temp;
                 }
@@ -55,8 +60,8 @@ public class Q3Sorting {
         return a.length - b.length;
     }
 
-    static void print(Student[] students) {
-        for (Student s : students) {
+    static void print(Student123[] students) {
+        for (Student123 s : students) {
             System.out.println(s.name + " " + Arrays.toString(s.marks));
         }
     }
