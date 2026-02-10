@@ -1,0 +1,131 @@
+public class DLLImplementation {
+
+    public static void main(String[] args) {
+
+        DoublyLinkedList list = new DoublyLinkedList();
+
+        list.add(10);
+        list.add(20);
+        list.add(30);
+        list.addFirst(5);
+
+        list.displayForward();
+        list.displayBackward();
+
+        list.remove(2);
+
+        list.displayForward();
+
+        System.out.println("Element at index 1: " + list.get(1));
+    }
+}
+
+class DNode {
+    int data;
+    DNode next;
+    DNode prev;
+
+    DNode(int data) {
+        this.data = data;
+        this.next = null;
+        this.prev = null;
+    }
+}
+
+class DoublyLinkedList {
+
+    private DNode head;
+    private DNode tail;
+    private int size;
+
+    public DoublyLinkedList() {
+        head = null;
+        tail = null;
+        size = 0;
+    }
+
+    public void add(int data) {
+        DNode newNode = new DNode(data);
+
+        if (head == null) {
+            head = tail = newNode;
+        } else {
+            tail.next = newNode;
+            newNode.prev = tail;
+            tail = newNode;
+        }
+        size++;
+    }
+
+    public void addFirst(int data) {
+        DNode newNode = new DNode(data);
+
+        if (head == null) {
+            head = tail = newNode;
+        } else {
+            newNode.next = head;
+            head.prev = newNode;
+            head = newNode;
+        }
+        size++;
+    }
+
+    public void remove(int index) {
+        checkIndex(index);
+
+        if (index == 0) {
+            head = head.next;
+            if (head != null)
+                head.prev = null;
+            else
+                tail = null;
+        } else {
+            DNode curr = head;
+            for (int i = 0; i < index; i++) {
+                curr = curr.next;
+            }
+
+            if (curr.next != null)
+                curr.next.prev = curr.prev;
+            else
+                tail = curr.prev;
+
+            curr.prev.next = curr.next;
+        }
+        size--;
+    }
+
+    public int get(int index) {
+        checkIndex(index);
+
+        DNode curr = head;
+        for (int i = 0; i < index; i++) {
+            curr = curr.next;
+        }
+        return curr.data;
+    }
+
+    public void displayForward() {
+        DNode temp = head;
+        while (temp != null) {
+            System.out.print(temp.data + " <-> ");
+            temp = temp.next;
+        }
+        System.out.println("null");
+    }
+
+    public void displayBackward() {
+        DNode temp = tail;
+        while (temp != null) {
+            System.out.print(temp.data + " <-> ");
+            temp = temp.prev;
+        }
+        System.out.println("null");
+    }
+
+    private void checkIndex(int index) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException();
+        }
+    }
+}
