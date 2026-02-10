@@ -16,8 +16,8 @@ public class ArrayListImplementation {
         System.out.println("\nindex : "+list.get(4));
 //      System.out.println("\nindex : "+list.get(40));
 /*      Exception in thread "main" java.lang.IndexOutOfBoundsException
-    	at Collection_Dharini.MyArrayList.get(ArrayListImplementation.java:47)
-	    at Collection_Dharini.ArrayListImplementation.main(ArrayListImplementation.java:15)
+    	at Collection.MyArrayList.get(ArrayListImplementation.java:47)
+	    at Collection.ArrayListImplementation.main(ArrayListImplementation.java:15)
  */
         list.remove(3);
         list.print();
