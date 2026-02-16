@@ -52,13 +52,12 @@ class LogEntry {
     }
 }
 
-/* ================= INTERFACE ================= */
+
 
 interface SuspiciousDetector {
     List<LogEntry> detect(List<LogEntry> logs);
 }
 
-/* ================= IMPLEMENTATION ================= */
 
 class SuspiciousDetectorImpl implements SuspiciousDetector {
 
@@ -108,7 +107,6 @@ class SuspiciousDetectorImpl implements SuspiciousDetector {
     }
 }
 
-/* ================= SERVICE CLASS ================= */
 
 class LogManager {
 
@@ -156,7 +154,6 @@ class LogManager {
     }
 }
 
-/* ================= DRIVER ================= */
 
 public class Main {
 
